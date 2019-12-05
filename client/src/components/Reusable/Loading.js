@@ -1,5 +1,5 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+import propTypes from 'prop-types';
 
 
 class Loading extends React.Component {
@@ -21,9 +21,9 @@ class Loading extends React.Component {
   }
 }
 
-Loading.PropTypes = {
-  text: PropTypes.string.isRequired,
-  speed: PropTypes.number.isRequired
+Loading.propTypes = {
+  text: propTypes.string.isRequired,
+  speed: propTypes.number.isRequired
 };
 
 

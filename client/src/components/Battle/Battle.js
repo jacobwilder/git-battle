@@ -1,6 +1,6 @@
 import React from 'react';
 import PlayerInput from './PlayerInput';
-import PropTypes from 'prop-types';
+import propTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
 import animate from '@jam3/gsap-promise';
@@ -20,11 +20,11 @@ function PlayerPreview(props) {
   );
 }
 
-PlayerPreview.PropTypes = {
-  avatar: PropTypes.string.isRequired,
-  username: PropTypes.string.isRequired,
-  onReset: PropTypes.func.isRequired,
-  id: PropTypes.string.isRequired
+PlayerPreview.propTypes = {
+  avatar: propTypes.string.isRequired,
+  username: propTypes.string.isRequired,
+  onReset: propTypes.func.isRequired,
+  id: propTypes.string.isRequired
 };
 
 class Battle extends React.Component {

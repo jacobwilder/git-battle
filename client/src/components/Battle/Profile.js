@@ -1,5 +1,5 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+import propTypes from 'prop-types';
 import PlayerPreview from './PlayerPreview';
 
 // stateless functional component
@@ -25,8 +25,8 @@ function Profile(props) {
   );
 }
 
-Profile.PropTypes = {
-  info: PropTypes.object.isRequired
+Profile.propTypes = {
+  info: propTypes.object.isRequired
 };
 
 export default Profile;

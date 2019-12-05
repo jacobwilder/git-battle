@@ -18,7 +18,7 @@ class Home extends React.Component {
     return (
       <div className="home-container">
         <h1 className="home-header" ref={c => (this.header = c)}>
-          Git Battle
+          Git Compare
           <br></br>
           An innovative way for employers to decide who to hire!
         </h1>
