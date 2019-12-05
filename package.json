@@ -1,42 +1,29 @@
 {
   "name": "git-battle",
-  "version": "0.1.0",
-  "private": true,
-  "dependencies": {
-    "@jam3/gsap-promise": "^4.0.1",
-    "axios": "^0.18.1",
-    "gsap": "^1.20.2",
-    "mem": ">=4.0.0",
-    "eslint": ">=4.18.2",
-    "braces": ">=2.3.1",
-    "js-yaml": ">=3.13.1",
-    "webpack-dev-server": ">=3.1.11",
-    "mime": ">=1.4.1",
-    "query-string": "^5.0.0",
-    "react": "^15.6.1",
-    "react-dom": "^15.6.1",
-    "react-router-dom": "^4.2.2",
-    "react-scripts": "1.0.13"
-  },
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
+    "start": "if-env NODE_ENV='production' && npm run start:prod || npm run start:dev",
+    "start:prod": "node server.js",
+    "start:dev": "concurrently \"nodemon server.js --ignore 'client/*'\" \"npm run client\" ",
+    "install": "cd client && npm install",
+    "client": "cd client && npm run start",
+    "build": "cd client && npm run build",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
-  "eslintConfig": {
-    "extends": "react-app"
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "gh-pages": "^2.1.1",
+    "if-env": "^1.0.4",
+    "mongoose": ">=5.7.5"
   },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
+  "devDependencies": {
+    "concurrently": "^4.1.2",
+    "nodemon": "^1.19.2"
   }
 }
