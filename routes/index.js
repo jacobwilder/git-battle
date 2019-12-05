@@ -38,14 +38,18 @@ router.get('/api/repos/:username', (req, res) => {
     });
 });
 
-// router.get('/api/:username1/:username2', (req, res) => {
-//     console.log(`GET /api/battle/${req.params.username1}/${req.params.username2}`);
-//     battle([req.params.username1, req.params.username2])
-//       .then(profile => {
-//         console.log(players);
-//         res.json(players);
-//       });
-// });
+router.get('/api/:username1?/:username2?/:username3?', (req, res) => {
+  axios.all(
+    [
+        getManuel(req.params.username1), 
+        getManuel(req.params.username2),
+        getManuel(req.params.username3)
+    ]
+  ).then(axios.spread((profile1, profile2, profile3) => {
+    res.json([profile1, profile2, profile3]);
+  }));
+});
+
     
     // this is for production use only, if no API routes are hit then serve up the React frontend
 router.use((req, res) => {
@@ -128,6 +132,12 @@ function getRepos(username, quantity = 100) {
   );
 }
 
+function battle(players) {
+  return axios
+    .all(players.map(getUserData))
+    .then(sortPlayers)
+    .catch(handleError);
+}
 
 function getStarCount(repos) {
   return repos.data.reduce((count, repo) => {
@@ -149,15 +159,12 @@ function handleError(error) {
 }
 
 function getUserData(player) {
-  return axios.all([getProfile(player), getRepos(player), getCommits(player)]).then(function (data) {
-    let profile = data[0];
-    let repos = data[1];
-    let commits = data[2];
-    console.log(profile, repos, commits)
+  return axios.all([getManuel(player)]).then(function (data) {
+    console.log(data)
 
     return {
       profile: profile,
-      score: calculateScore(profile, repos, commits)
+      score: calculateScore(data)
     };
   });
 }
@@ -168,10 +175,4 @@ function sortPlayers(players) {
   });
 }
 
-function battle(players) {
-  return axios
-    .all(players.map(getUserData))
-    .then(sortPlayers)
-    .catch(handleError);
-}
 module.exports = router;

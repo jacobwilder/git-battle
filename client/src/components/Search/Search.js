@@ -41,9 +41,6 @@ class Search extends React.Component {
   handleSubmit(event) {
     event.preventDefault();
     this.setState({
-      user: null,
-      userInfo: '',
-      userRepos: '',
       loading: true
     });
 
@@ -70,6 +67,7 @@ class Search extends React.Component {
 
   render() {
     let { userInfo, userRepos, loading } = this.state;
+    console.log(userInfo);
 
     return (
       <div>
@@ -97,18 +95,18 @@ class Search extends React.Component {
 
         <div className="profile">
           {loading ? <Loading speed="250" /> : ' '}
-          {userRepos && <UserProfile profile={userInfo} />}
-          {userRepos && <UserRepos repos={userRepos} />}
+          {userInfo && <UserProfile profile={userInfo.data} />}
+          {userRepos && <UserRepos repos={userRepos.data} />}
         </div>
       </div>
     );
   }
 }
 
-Search.propTypes = {
-    user: propTypes.string.isRequired,
-    userInfo: propTypes.object.isRequired,
-    userRepos: propTypes.object.isRequired
-};
+// Search.propTypes = {
+//     user: propTypes.string.isRequired,
+//     userInfo: propTypes.object.isRequired,
+//     userRepos: propTypes.object.isRequired
+// };
 
 export default Search;

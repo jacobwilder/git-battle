@@ -7,7 +7,6 @@ class Loading extends React.Component {
     super(props);
 
     this.state = {
-      text: props.text,
       speed: props.speed
     };
   }
@@ -22,7 +21,6 @@ class Loading extends React.Component {
 }
 
 Loading.propTypes = {
-  text: propTypes.string.isRequired,
   speed: propTypes.number.isRequired
 };
 

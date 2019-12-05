@@ -4,6 +4,9 @@ function UserProfile(props) {
   let profile = props.profile;
   let date = new Date(profile.created_at);
   let readableMonth = date.toLocaleString('en-us', { month: 'long' });
+  console.log(profile)
+  console.log(date)
+  console.log(readableMonth)
 
   return (
     <div className="profileInfo">
