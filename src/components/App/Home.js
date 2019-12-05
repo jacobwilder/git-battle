@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-//import { TweenMax } from 'gsap';
 
 import animate from '@jam3/gsap-promise';
 import { findDOMNode } from 'react-dom';
