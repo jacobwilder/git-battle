@@ -1,8 +1,8 @@
-### GITHUB BATTLE
+### Git Compare
 
 ### Overview
-Face off against different github users head to head. Victory is based on a score that is calculated from followers, commits, and number of public repos.
-Users can also search individual Github profiles as well as view popular repos and users. 
+-Face off against different github users head to head. Victory is based on a score that is calculated from followers, commits, and number of public repos.
+-Users can also search individual Github profiles as well as view previous battle leaderboards. 
 
 ### Technologies / Languages Used
 - [Javascript](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
