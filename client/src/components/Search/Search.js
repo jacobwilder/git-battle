@@ -103,10 +103,10 @@ class Search extends React.Component {
   }
 }
 
-// Search.propTypes = {
-//     user: propTypes.string.isRequired,
-//     userInfo: propTypes.object.isRequired,
-//     userRepos: propTypes.object.isRequired
-// };
+Search.propTypes = {
+    user: propTypes.string.isRequired,
+    userInfo: propTypes.object.isRequired,
+    userRepos: propTypes.object.isRequired
+};
 
 export default Search;

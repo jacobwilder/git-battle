@@ -26,12 +26,12 @@ function UserProfile(props) {
       </div>
       <div>
         <h4>
-          <a href={profile.blog} target="_blank">
+          <a href={profile.blog} rel="noopener noreferrer" target="_blank">
             {profile.blog}
           </a>
         </h4>
         <p>
-          <i className="fa fa-code-fork" aria-hidden="true" /> Repos:{' '}
+          <i className="fa fa-code-fork" aria-hidden="true" /> Repositories:{' '}
           {profile.public_repos}
         </p>
         <p>

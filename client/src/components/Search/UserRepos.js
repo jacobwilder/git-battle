@@ -11,7 +11,7 @@ function UserRepos(props) {
           return (
             <li className="repo" key={repo.name}>
               <h3>
-                <a href="repo.html_url" target="_blank">
+                <a href={repo.html_url} target="_blank">
                   {repo.name}
                 </a>
               </h3>
@@ -26,7 +26,7 @@ function UserRepos(props) {
               </div>
               <p>{repo.language ? `Main Language: ${repo.language}` : ``}</p>
               <br />
-              <a className="button-repo" href={repo.html_url} target="_blank">
+              <a className="button-repo" href={repo.html_url} rel="noopener noreferrer" target="_blank">
                 Repo
               </a>
             </li>

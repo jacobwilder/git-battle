@@ -20,7 +20,7 @@ class Home extends React.Component {
         <h1 className="home-header" ref={c => (this.header = c)}>
           Git Compare
           <br></br>
-          An innovative way for employers to decide who to hire!
+          An innovative way to simplify the hiring process!
         </h1>
 
         <Link

@@ -15,7 +15,6 @@ router.get('/api/:username', (req, res) => {
     console.log(`GET /api/${req.params.username}`);
     getManuel(req.params.username)
     .then(profile => {
-        console.log(profile);
         res.json(profile);
     });
 });
@@ -24,7 +23,6 @@ router.get('/api/commits/:username', (req, res) => {
     console.log(`GET /api/commits/${req.params.username}`);
     getCommits(req.params.username)
     .then(commits => {
-        console.log(commits);
         res.json(commits);
     });
 });
@@ -33,7 +31,6 @@ router.get('/api/repos/:username', (req, res) => {
     console.log(`GET /api/repos/${req.params.username}`);
     getUserRepos(req.params.username)
     .then(repos => {
-        console.log(repos);
         res.json(repos);
     });
 });
