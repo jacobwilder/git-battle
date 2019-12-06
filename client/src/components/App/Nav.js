@@ -16,6 +16,11 @@ class Nav extends React.Component {
           </NavLink>
         </li>
         <li>
+          <NavLink activeClassName="active" to="/scoreboard">
+            Scoreboard
+          </NavLink>
+        </li>
+        <li>
           <NavLink activeClassName="active" to="/contact">
             Meet the Team
           </NavLink>
