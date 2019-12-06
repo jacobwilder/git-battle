@@ -12,7 +12,7 @@ class Nav extends React.Component {
         </li>
         <li>
           <NavLink activeClassName="active" to="/battle">
-            Battle
+            Clash
           </NavLink>
         </li>
         <li>

@@ -138,7 +138,7 @@ class Battle extends React.Component {
               search: `?playerOneName=${playerOneName}&playerTwoName=${playerTwoName}`
             }}
           >
-            Battle
+            Clash
           </Link>
         )}
       </div>
