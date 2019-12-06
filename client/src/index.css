@@ -251,8 +251,8 @@ li {
 }
 
 .button-repo {
-  color: #e6e6e6;
-  background: #0a0a0a;
+  color: #0a0a0a;
+  background: #e6e6e6;
   border: 1px solid #e6e6e6;
   font-size: 15px;
   border-radius: 3px;
@@ -264,14 +264,56 @@ li {
 }
 
 .button-repo:hover {
-  background-color: #ffffff;
-  color: #0a0a0a;
+  background-color: lightskyblue;
+  color: #ffffff;
   border: 1px solid #0a0a0a;
 }
 
 .fa {
+  color: #ffffff;
   padding-left: 5px;
 }
+
+.fa:hover {
+  color: lightskyblue;
+}
+
+.h2 {
+  margin: 10px;
+  text-align: center;
+  font-family: 'Raleway', sans-serif;
+  font-style: normal;
+  color: #ffffff
+}
+.contact-img {
+  border-radius: 50%;
+  /* display: inline-flexbox; */
+  margin-left: auto;
+  margin-right: 50rem;
+}
+
+p {
+  display: inline-flexbox;
+}
+
+.row {
+display: inline-flexbox;
+width: 1060px;
+height: 300px
+}
+
+.col-md-12 {
+  padding: 30px;
+  text-align: center;
+  font-family: 'Raleway', sans-serif;
+  color: #ffffff;
+}
+
+.btn-light {
+  margin: 5px;
+  align-items: center;
+}
+
 
 body{
   background: #3399ff;

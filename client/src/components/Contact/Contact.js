@@ -1,4 +1,5 @@
 import React from "react";
+import '../../index.css';
 
 // By importing the Section.css file, it is added to the DOM whenever this component loads
 
@@ -18,14 +19,17 @@ class Contact extends React.Component {
             <h2 className="h2">Meet the Team</h2>
         </div>
         <div className="row">
-            <div className="col-md">
+            <div className="col-md-12">
             <img
+                className="contact-img"            
                 src="https://res.cloudinary.com/dmer2gzhp/image/upload/v1575506244/image/JW_bifwpd.png"
                 alt="Jake"
              style={{ width: "200px" }}
             />
-            </div>
-            <div className="col-md">
+            <p>Jacob Wilder</p>
+            <p>
+                <li>API functionality/Design</li>
+            </p>
             <a href="https://github.com/jacobwilder" class="btn btn-light">
                 <i class="fa fa-2x fa-github-square"></i>
             </a>{" "}
@@ -35,22 +39,20 @@ class Contact extends React.Component {
             >
                 <i class="fa fa-2x fa-linkedin"></i>
              </a>
-            <p>
-                “There are only two ways to live your life. One is as though nothing
-                is a miracle. The other is as though everything is a miracle.” ―
-                Albert Einstein
-             </p>
             </div>
-
-            <div className="col-md">
+        </div>
+        <div className="row">
+            <div className="col-md-12">
             <img
+                className="contact-img"
                 src="https://res.cloudinary.com/dmer2gzhp/image/upload/v1575506244/image/CM_dbwzk9.png"
                 alt="Chris"
                 style={{ width: "200px" }}
             />
-            </div>
-
-            <div className="col-md">
+            <p>Christopher Mangin</p>
+            <p>
+                <li>server-side functionality</li>
+            </p>
             <a href="https://github.com/cmangin87" class="btn btn-light">
                 <i class="fa fa-2x fa-github-square"></i>
             </a>{" "}
@@ -60,21 +62,20 @@ class Contact extends React.Component {
             >
                 <i class="fa fa-2x fa-linkedin"></i>
             </a>
-            <p>
-                “Life isn't about finding yourself. Life is about creating
-                yourself.” ― George Bernard Shaw
-            </p>
             </div>
         </div>
         <div className="row">
-            <div className="col-md">
+            <div className="col-md-12">
             <img
+                className="contact-img"
                 src="https://res.cloudinary.com/dmer2gzhp/image/upload/v1575506244/image/KD_rtivys.png"
                 alt="Kevin"
                 style={{ width: "200px" }}
             />
-            </div>
-            <div className="col-md">
+                <p>Kevin Darcy</p>
+                <p>
+                    <li>Database Manipulation</li>
+                </p>
                 <a href="https://github.com/k-darc" class="btn btn-light">
                 <i class="fa fa-2x fa-github-square"></i>
                 </a>{" "}
@@ -84,21 +85,20 @@ class Contact extends React.Component {
                 >
                 <i class="fa fa-2x fa-linkedin"></i>
                 </a>
-                <p>
-                    “Just when you think it can't get any worse, it can. And just when
-                    you think it can't get any better, it can.” ― Nicholas Sparks, At
-                    First Sight
-                </p>
             </div>
-
-            <div className="col-md">
+        </div>
+        <div className="row">
+            <div className="col-md-12">
             <img
+                className="contact-img"
                 src="https://res.cloudinary.com/dmer2gzhp/image/upload/v1575562807/image/manuel_usqrdy.png"
                 alt="Manuel"
                 style={{ width: "200px" }}
             />
-            </div>
-            <div className="col-md">
+            <p>Manuel Camilo</p>
+            <p>
+                <li>UX/UI Design</li>
+            </p>
             <a href="https://github.com/mrcamilo" class="btn btn-light">
                 <i class="fa fa-2x fa-github-square"></i>
             </a>{" "}
@@ -108,20 +108,20 @@ class Contact extends React.Component {
             >
                 <i class="fa fa-2x fa-linkedin"></i>
             </a>
-            <p>
-                “To live is the rarest thing in the world. Most people exist, that
-                is all.” ― Oscar Wilde
-            </p>
             </div>
-
-            <div className="col-md">
+        </div>
+        <div className="row">
+            <div className="col-md-12">
             <img
+                className="contact-img"
                 src="https://res.cloudinary.com/dmer2gzhp/image/upload/v1575427220/image/KB_drkhn9.jpg"
                 alt="Kate"
                 style={{ width: "200px" }}
             />
-            </div>
-            <div className="col-md">
+            <p>Kateryna Bondaruk</p>
+            <p>
+                <li>CSS Styling/ Contact Page</li>
+            </p>
             <a href="https://github.com/Katebond06" className="btn btn-light">
                 <i class="fa fa-2x fa-github-square"></i>
             </a>{" "}
@@ -131,10 +131,6 @@ class Contact extends React.Component {
             >
                 <i class="fa fa-2x fa-linkedin"></i>
             </a>
-            <p>
-                “You only live once, but if you do it right, once is enough.” ― Mae
-                West
-            </p>
             </div>
         </div>
         </section>

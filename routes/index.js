@@ -1,9 +1,6 @@
 var axios = require('axios');
 const router = require('express').Router();
 const path = require('path');
-//const apiRoutes = require('./api');
-
-//router.use('/api', apiRoutes);
 
 const id = '3e42b7b6df8bc63f3cb4';
 const sec = '977293076eb46d2f70ab6270c60157860be8b34e';
@@ -48,7 +45,7 @@ router.get('/api/:username1?/:username2?/:username3?', (req, res) => {
 });
 
     
-    // this is for production use only, if no API routes are hit then serve up the React frontend
+// this is for production use only, if no API routes are hit then serve up the React frontend
 router.use((req, res) => {
   res.sendFile(path.join(__dirname, '../client/build/index.html'));
 });
@@ -74,7 +71,6 @@ function getCommits(username) {
   return axios
     .get(`https://github-contributions-api.now.sh/v1/${username}`)
     .then(user => {
-      //console.log(user.data.years[0].total);
       return user.data.years[0].total;
     });
 }
@@ -120,9 +116,6 @@ function getManuel(username) {
           });
 
           manuel.score = calculateScore(manuel);
-        //   manuel.repos = repos;
-
-          // console.log(manuel);
           return manuel;
       }))
 }
@@ -133,32 +126,17 @@ function getRepos(username, quantity = 100) {
   );
 }
 
-// function battle(players) {
-//   return axios
-//     .all(players.map(getUserData))
-//     .then(sortPlayers)
-//     .catch(handleError);
-// }
-
 function getStarCount(repos) {
-  // console.log('repos', repos);
   return repos.reduce((count, repo) => {
     return count + repo.stargazers_count;
   }, 0);
 }
 
-// function calculateScore(profile, repos, username) {
 function calculateScore(user) {
-  // let followers = profile.followers;
-  // let repos2 = profile.public_repos;
-  // let totalStars = getStarCount(repos);
   let followers = user.followers;
   let repos2 = user.public_repos;
   let totalStars = getStarCount(user.repos);
 
-  // console.log('followers', followers);
-  // console.log('totalStars', totalStars);
-  // console.log('repos2', repos2);
   return (followers * 1.5) * 10 + (totalStars * 0.75) * 10 + (repos2 * 0.4) * 10
 }
 
@@ -166,17 +144,6 @@ function handleError(error) {
   console.warn(error);
   return null;
 }
-
-// function getUserData(player) {
-//   return axios.all([getManuel(player)]).then(function (data) {
-//     // console.log('data', data)
-
-//     return {
-//       profile: data,
-//       score: calculateScore(data)
-//     };
-//   });
-// }
 
 function sortPlayers(players) {
   return players.sort((a, b) => {
