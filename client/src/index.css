@@ -297,7 +297,7 @@ p {
 }
 
 .row {
-display: inline-flexbox;
+display: flex;
 width: 1060px;
 height: 300px
 }

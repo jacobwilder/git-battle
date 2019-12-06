@@ -26,8 +26,8 @@ class Contact extends React.Component {
                 alt="Jake"
              style={{ width: "200px" }}
             />
-            <p>Jacob Wilder</p>
             <p>
+                <li><strong>Jacob Wilder</strong></li>
                 <li>API functionality/Design</li>
             </p>
             <a href="https://github.com/jacobwilder" class="btn btn-light">
@@ -49,8 +49,8 @@ class Contact extends React.Component {
                 alt="Chris"
                 style={{ width: "200px" }}
             />
-            <p>Christopher Mangin</p>
             <p>
+                <li><strong>Christopher Mangin</strong></li>
                 <li>server-side functionality</li>
             </p>
             <a href="https://github.com/cmangin87" class="btn btn-light">
@@ -72,8 +72,8 @@ class Contact extends React.Component {
                 alt="Kevin"
                 style={{ width: "200px" }}
             />
-                <p>Kevin Darcy</p>
                 <p>
+                    <li><strong>Kevin Darcy</strong></li>
                     <li>Database Manipulation</li>
                 </p>
                 <a href="https://github.com/k-darc" class="btn btn-light">
@@ -95,8 +95,8 @@ class Contact extends React.Component {
                 alt="Manuel"
                 style={{ width: "200px" }}
             />
-            <p>Manuel Camilo</p>
             <p>
+                <li><strong>Manuel Camilo</strong></li>
                 <li>UX/UI Design</li>
             </p>
             <a href="https://github.com/mrcamilo" class="btn btn-light">
@@ -118,8 +118,8 @@ class Contact extends React.Component {
                 alt="Kate"
                 style={{ width: "200px" }}
             />
-            <p>Kateryna Bondaruk</p>
             <p>
+                <li><strong>Kateryna Bondaruk</strong></li>
                 <li>CSS Styling/ Contact Page</li>
             </p>
             <a href="https://github.com/Katebond06" className="btn btn-light">
