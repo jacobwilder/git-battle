@@ -126,7 +126,7 @@ class Contact extends React.Component {
                 <i class="fa fa-2x fa-github-square"></i>
             </a>{" "}
             <a
-                href="https://www.linkedin.com/in/kateryna-bondaruk-810092177/"
+                href="https://www.linkedin.com/in/kateryna-bondaruk-810093177/"
                 className="btn btn-light"
             >
                 <i class="fa fa-2x fa-linkedin"></i>
