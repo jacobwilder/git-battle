@@ -1,4 +1,4 @@
-### GITHUB WARS
+### GITHUB BATTLE
 
 ### OVERVIEW
 Face off against different github users head to head. Victory is based on a score that is calculated from followers, commits, and number of public repos.
