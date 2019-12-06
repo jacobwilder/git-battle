@@ -5,6 +5,7 @@ import PlayerPreview from './PlayerPreview';
 // stateless functional component
 function Profile(props) {
   let info = props.info;
+  console.log('info', info);
   return (
     <PlayerPreview username={info.login} avatar={info.avatar_url}>
       <ul className="space-list-items">

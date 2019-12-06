@@ -4,11 +4,12 @@ import Profile from './Profile';
 
 // stateless functional component
 function Player(props) {
+  console.log('props.profile', props.profile);
   return (
     <div>
       <h1 className="header">{props.label}</h1>
-      <h3 style={{ textAlign: 'center' }}>Score: {props.score}</h3>
-      <Profile info={props.profile} />
+      {props.profile.score && <h3 style={{ textAlign: 'center' }}>Score: {props.profile.score}</h3>}
+      {props.profile && <Profile info={props.profile} />}
     </div>
   );
 }

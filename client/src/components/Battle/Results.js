@@ -1,6 +1,6 @@
 import React from 'react';
 import queryString from 'query-string';
-import { getPlayers } from '../../utils/api';
+import { getUserData } from '../../utils/api';
 import { Link } from 'react-router-dom';
 import Player from './Player';
 import Loading from '../Reusable/Loading';
@@ -18,10 +18,10 @@ class Results extends React.Component {
 
   componentDidMount() {
     let players = queryString.parse(this.props.location.search);
-    console.log(players);
-    getPlayers(players.playerOneName, players.playerTwoName, players.playerThreeName).then(
+    getUserData(players.playerOneName, players.playerTwoName).then(
      
         function(profiles) {
+          console.log(profiles);
         if (!profiles) {
           return this.setState(function() {
             return {
@@ -35,9 +35,8 @@ class Results extends React.Component {
         this.setState(function() {
           return {
             error: null,
-            winner: profiles[0],
-            runnerup: profiles[1],
-            loser: profiles[2],
+            winner: profiles.data[0],
+            loser: profiles.data[1],
             loading: false
           };
         });
@@ -46,7 +45,7 @@ class Results extends React.Component {
   }
 
   render() {
-    let { winner, runnerup, loser, error, loading } = this.state;
+    let { winner, loser, error, loading } = this.state;
 
 
     if (loading) {
@@ -59,11 +58,12 @@ class Results extends React.Component {
         </div>
       );
     } else { 
+      console.log('winner', winner)
+      console.log('loser', loser)
     return (
       <div className="row">
-        <Player label="Winner" score={winner.score} profile={winner.profile} />
-        <Player label="Runner Up" score={runnerup.score} profile={runnerup.profile} />
-        <Player label="Loser" score={loser.score} profile={loser.profile} />
+        {winner && <Player label="Winner" profile={winner} />}
+        {loser && <Player label="Loser" profile={loser} />}
       </div>
      );
     }

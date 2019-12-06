@@ -19,6 +19,7 @@ router.get('/api/:username', (req, res) => {
     });
 });
 
+
 router.get('/api/commits/:username', (req, res) => {
     console.log(`GET /api/commits/${req.params.username}`);
     getCommits(req.params.username)
@@ -40,10 +41,9 @@ router.get('/api/:username1?/:username2?/:username3?', (req, res) => {
     [
         getManuel(req.params.username1), 
         getManuel(req.params.username2),
-        getManuel(req.params.username3)
     ]
-  ).then(axios.spread((profile1, profile2, profile3) => {
-    res.json([profile1, profile2, profile3]);
+  ).then(axios.spread((profile1, profile2) => {
+    res.json(sortPlayers([profile1, profile2]));
   }));
 });
 
@@ -52,6 +52,8 @@ router.get('/api/:username1?/:username2?/:username3?', (req, res) => {
 router.use((req, res) => {
   res.sendFile(path.join(__dirname, '../client/build/index.html'));
 });
+
+
 
 
 function getUserRepos(username) {
@@ -72,7 +74,7 @@ function getCommits(username) {
   return axios
     .get(`https://github-contributions-api.now.sh/v1/${username}`)
     .then(user => {
-      console.log(user.data.years[0].total);
+      //console.log(user.data.years[0].total);
       return user.data.years[0].total;
     });
 }
@@ -116,9 +118,11 @@ function getManuel(username) {
             kevin.language = repo.language;
             manuel.repos.push(kevin);
           });
+
+          manuel.score = calculateScore(manuel);
         //   manuel.repos = repos;
 
-          //console.log(manuel);
+          // console.log(manuel);
           return manuel;
       }))
 }
@@ -129,24 +133,32 @@ function getRepos(username, quantity = 100) {
   );
 }
 
-function battle(players) {
-  return axios
-    .all(players.map(getUserData))
-    .then(sortPlayers)
-    .catch(handleError);
-}
+// function battle(players) {
+//   return axios
+//     .all(players.map(getUserData))
+//     .then(sortPlayers)
+//     .catch(handleError);
+// }
 
 function getStarCount(repos) {
-  return repos.data.reduce((count, repo) => {
+  // console.log('repos', repos);
+  return repos.reduce((count, repo) => {
     return count + repo.stargazers_count;
   }, 0);
 }
 
-function calculateScore(profile, repos, username) {
-  let followers = profile.followers;
-  let totalStars = getStarCount(repos);
-  let repos2 = profile.public_repos;
+// function calculateScore(profile, repos, username) {
+function calculateScore(user) {
+  // let followers = profile.followers;
+  // let repos2 = profile.public_repos;
+  // let totalStars = getStarCount(repos);
+  let followers = user.followers;
+  let repos2 = user.public_repos;
+  let totalStars = getStarCount(user.repos);
 
+  // console.log('followers', followers);
+  // console.log('totalStars', totalStars);
+  // console.log('repos2', repos2);
   return (followers * 1.5) * 10 + (totalStars * 0.75) * 10 + (repos2 * 0.4) * 10
 }
 
@@ -155,16 +167,16 @@ function handleError(error) {
   return null;
 }
 
-function getUserData(player) {
-  return axios.all([getManuel(player)]).then(function (data) {
-    console.log(data)
+// function getUserData(player) {
+//   return axios.all([getManuel(player)]).then(function (data) {
+//     // console.log('data', data)
 
-    return {
-      profile: profile,
-      score: calculateScore(data)
-    };
-  });
-}
+//     return {
+//       profile: data,
+//       score: calculateScore(data)
+//     };
+//   });
+// }
 
 function sortPlayers(players) {
   return players.sort((a, b) => {

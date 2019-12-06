@@ -86,8 +86,6 @@ class Battle extends React.Component {
       playerTwoName,
       playerOneImage,
       playerTwoImage,
-      playerThreeName,
-      playerThreeImage
     } = this.state;
 
     let match = this.props.match;
@@ -130,32 +128,14 @@ class Battle extends React.Component {
               id="playerTwo"
             />
           )}
-
-          {!playerThreeName && (
-            <PlayerInput
-              ref={b => (this.third = findDOMNode(b))}
-              id="playerThree"
-              label="Player Three"
-              onSubmit={this.handleSubmit}
-            />
-          )}
-
-          {playerThreeImage !== null && (
-            <PlayerPreview
-              avatar={playerThreeImage}
-              username={playerThreeName}
-              onReset={this.handleReset}
-              id="playerThree"
-            />
-          )}
         </div>
         {playerOneImage &&
-        playerTwoImage && playerThreeImage && (
+        playerTwoImage && (
           <Link
             className="button"
             to={{
               pathname: `${match.url}/results`,
-              search: `?playerOneName=${playerOneName}&playerTwoName=${playerTwoName}&playerThreeName=${playerThreeName}`
+              search: `?playerOneName=${playerOneName}&playerTwoName=${playerTwoName}`
             }}
           >
             Battle

@@ -4,9 +4,9 @@ export const getProfile = username => {
   return axios.get(`/api/${username}`);
 };
 
-export const getPlayers = (username1,username2,username3) => {
-    console.log(username1, username2, username3);
-    return axios.get(`/api/${username1}/${username2}/${username3}`);
+export const getUserData = (username1,username2) => {
+    console.log(username1, username2);
+    return axios.get(`/api/${username1}/${username2}`);
 };
 
 export const getUserRepos = username => {
