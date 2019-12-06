@@ -28,7 +28,7 @@ class Home extends React.Component {
           className="button"
           to="/battle"
         >
-          Battle
+          Clash
         </Link>
       </div>
     );
