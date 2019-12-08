@@ -25,8 +25,8 @@ Download the repo and run 'npm install'. After installation run 'npm start'.
 [![brave-52s-N33-Aptf.png](https://i.postimg.cc/FKyrXTrk/brave-52s-N33-Aptf.png)](https://postimg.cc/jWj0zQJR)
 
 ## Github Links
-https://www.github.com/jacobwilder
-https://www.github.com/k-darc
-https://www.github.com/cmangin87
-https://www.github.com/Katebond06
-https://www.github.com/mrCamilo
+*https://www.github.com/jacobwilder
+*https://www.github.com/k-darc
+*https://www.github.com/cmangin87
+*https://www.github.com/Katebond06
+*https://www.github.com/mrCamilo
