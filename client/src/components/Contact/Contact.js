@@ -18,7 +18,7 @@ class Contact extends React.Component {
         <div>
             <h2 className="h2">Meet the Team</h2>
         </div>
-        <div className="row">
+        <div className="row contact-container">
             <div className="col-md-12">
             <img
                 className="contact-img"            
@@ -26,10 +26,10 @@ class Contact extends React.Component {
                 alt="Jake"
              style={{ width: "200px" }}
             />
-            <p>
+            <p className="contact-info">
                 <li><strong>Jacob Wilder</strong></li>
                 <li>API functionality/Design</li>
-            </p>
+                <br></br>
             <a href="https://github.com/jacobwilder" class="btn btn-light">
                 <i class="fa fa-2x fa-github-square"></i>
             </a>{" "}
@@ -39,9 +39,10 @@ class Contact extends React.Component {
             >
                 <i class="fa fa-2x fa-linkedin"></i>
              </a>
+            </p>
             </div>
         </div>
-        <div className="row">
+        <div className="row contact-container">
             <div className="col-md-12">
             <img
                 className="contact-img"
@@ -49,10 +50,10 @@ class Contact extends React.Component {
                 alt="Chris"
                 style={{ width: "200px" }}
             />
-            <p>
+            <p className="contact-info">
                 <li><strong>Christopher Mangin</strong></li>
                 <li>server-side functionality</li>
-            </p>
+                <br></br>
             <a href="https://github.com/cmangin87" class="btn btn-light">
                 <i class="fa fa-2x fa-github-square"></i>
             </a>{" "}
@@ -62,9 +63,10 @@ class Contact extends React.Component {
             >
                 <i class="fa fa-2x fa-linkedin"></i>
             </a>
+            </p>
             </div>
         </div>
-        <div className="row">
+        <div className="row contact-container">
             <div className="col-md-12">
             <img
                 className="contact-img"
@@ -72,10 +74,10 @@ class Contact extends React.Component {
                 alt="Kevin"
                 style={{ width: "200px" }}
             />
-                <p>
+                <p className="contact-info">
                     <li><strong>Kevin Darcy</strong></li>
                     <li>Database Manipulation</li>
-                </p>
+                    <br></br>
                 <a href="https://github.com/k-darc" class="btn btn-light">
                 <i class="fa fa-2x fa-github-square"></i>
                 </a>{" "}
@@ -85,9 +87,10 @@ class Contact extends React.Component {
                 >
                 <i class="fa fa-2x fa-linkedin"></i>
                 </a>
+                </p>
             </div>
         </div>
-        <div className="row">
+        <div className="row contact-container">
             <div className="col-md-12">
             <img
                 className="contact-img"
@@ -95,10 +98,10 @@ class Contact extends React.Component {
                 alt="Manuel"
                 style={{ width: "200px" }}
             />
-            <p>
+            <p className="contact-info">
                 <li><strong>Manuel Camilo</strong></li>
                 <li>UX/UI Design</li>
-            </p>
+                <br></br>
             <a href="https://github.com/mrcamilo" class="btn btn-light">
                 <i class="fa fa-2x fa-github-square"></i>
             </a>{" "}
@@ -108,9 +111,10 @@ class Contact extends React.Component {
             >
                 <i class="fa fa-2x fa-linkedin"></i>
             </a>
+            </p>
             </div>
         </div>
-        <div className="row">
+        <div className="row contact-container">
             <div className="col-md-12">
             <img
                 className="contact-img"
@@ -118,10 +122,10 @@ class Contact extends React.Component {
                 alt="Kate"
                 style={{ width: "200px" }}
             />
-            <p>
+            <p className="contact-info">
                 <li><strong>Kateryna Bondaruk</strong></li>
                 <li>CSS Styling/ Contact Page</li>
-            </p>
+                <br></br>
             <a href="https://github.com/Katebond06" className="btn btn-light">
                 <i class="fa fa-2x fa-github-square"></i>
             </a>{" "}
@@ -131,6 +135,7 @@ class Contact extends React.Component {
             >
                 <i class="fa fa-2x fa-linkedin"></i>
             </a>
+            </p>
             </div>
         </div>
         </section>
