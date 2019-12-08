@@ -1,5 +1,6 @@
 import React from "react";
 import '../../index.css';
+import animate from '@jam3/gsap-promise';
 
 // By importing the Section.css file, it is added to the DOM whenever this component loads
 
@@ -11,12 +12,16 @@ import '../../index.css';
 // We use JSX curly braces to evaluate the style object on the JSX tag
 
 class Contact extends React.Component {
+
+    componentDidMount() {
+        animate.from(this.header, 0.2, { y: -200, delay: 0.1 });
+    }
   
   render() {
     return (
         <section className="section">
         <div>
-            <h2 className="h2">Meet the Team</h2>
+            <h2 className="h2"  ref={c => (this.header = c)}>Meet the Team</h2>
         </div>
         <div className="row contact-container">
             <div className="col-md-12">
