@@ -132,11 +132,13 @@ function calculateScore(user) {
   let repos2 = user.public_repos;
   let commits2 = user.commits;
   let totalStars = getStarCount(user.repos);
+  let commits2 = user.commits;
+
 
   return (
-    followers * 1.25 * 10 +
-    totalStars * 0.75 * 10 +
-    repos2 * 0.5 * 10 +
+    (followers * 1.25) * 10 +
+    (totalStars * 0.75) * 10 +
+    (repos2 * 0.5) * 10 +
     (commits2 * 0.1)
   );
 }
