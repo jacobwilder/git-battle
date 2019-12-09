@@ -1,5 +1,4 @@
 import React from 'react';
-import propTypes from 'prop-types';
 import Profile from './Profile';
 
 // stateless functional component
@@ -13,11 +12,5 @@ function Player(props) {
     </div>
   );
 }
-
-Player.propTypes = {
-  label: propTypes.string.isRequired,
-  score: propTypes.number.isRequired,
-  profile: propTypes.object.isRequired
-};
 
 export default Player;

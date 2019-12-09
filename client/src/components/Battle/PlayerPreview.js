@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 
 function PlayerPreview(props) {
   return (
@@ -17,9 +16,5 @@ function PlayerPreview(props) {
   );
 }
 
-PlayerPreview.propTypes = {
-  avatar: PropTypes.string.isRequired,
-  username: PropTypes.string.isRequired
-};
 
 export default PlayerPreview;

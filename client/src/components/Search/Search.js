@@ -1,7 +1,6 @@
 import React from 'react';
 import UserProfile from './UserProfile';
 import UserRepos from './UserRepos';
-import propTypes from 'prop-types';
 import { getProfile, getUserRepos } from '../../utils/api';
 import Loading from '../Reusable/Loading';
 import animate from '@jam3/gsap-promise';
@@ -103,10 +102,5 @@ class Search extends React.Component {
   }
 }
 
-Search.propTypes = {
-    user: propTypes.string.isRequired,
-    userInfo: propTypes.object.isRequired,
-    userRepos: propTypes.object.isRequired
-};
 
 export default Search;

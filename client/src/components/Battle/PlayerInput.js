@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 
 class PlayerInput extends React.Component {
   constructor(props) {
@@ -47,14 +46,5 @@ class PlayerInput extends React.Component {
   }
 }
 
-PlayerInput.propTypes = {
-  id: PropTypes.string.isRequired,
-  label: PropTypes.string.isRequired,
-  onSubmit: PropTypes.func.isRequired
-};
-
-PlayerInput.defaultProps = {
-  label: 'Username'
-};
 
 export default PlayerInput;

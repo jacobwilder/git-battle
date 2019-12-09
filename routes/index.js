@@ -2,8 +2,8 @@ var axios = require("axios");
 const router = require("express").Router();
 const path = require("path");
 
-const id = "3e42b7b6df8bc63f3cb4";
-const sec = "977293076eb46d2f70ab6270c60157860be8b34e";
+const id = process.env.GITHUB_ID || "3e42b7b6df8bc63f3cb4";
+const sec = process.env.GITHUB_SEC || "977293076eb46d2f70ab6270c60157860be8b34e";
 
 const params = `?client_id=${id}&client_secret=${sec}`;
 const latest = `${params}&order=asc&sort=updated`;
