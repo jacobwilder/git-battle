@@ -17,6 +17,7 @@ function PlayerPreview(props) {
         Reset
       </button>
     </div>
+    
   );
 }
 
@@ -129,6 +130,7 @@ class Battle extends React.Component {
             />
           )}
         </div>
+        
         {playerOneImage &&
         playerTwoImage && (
           <Link
@@ -138,8 +140,10 @@ class Battle extends React.Component {
               search: `?playerOneName=${playerOneName}&playerTwoName=${playerTwoName}`
             }}
           >
+            
             Clash
           </Link>
+
         )}
       </div>
     );
