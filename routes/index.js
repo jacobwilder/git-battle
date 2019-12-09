@@ -8,6 +8,11 @@ const sec = '977293076eb46d2f70ab6270c60157860be8b34e';
 const params = `?client_id=${id}&client_secret=${sec}`;
 const latest = `${params}&order=asc&sort=updated`;
 
+const {
+  getSavedData,
+  saveData
+} = require('../controllers/data-controller');
+
 router.get('/api/:username', (req, res) => {
     console.log(`GET /api/${req.params.username}`);
     getManuel(req.params.username)
@@ -43,6 +48,12 @@ router.get('/api/:username1?/:username2?/:username3?', (req, res) => {
     res.json(sortPlayers([profile1, profile2]));
   }));
 });
+
+router
+  .route('/data/scoreboard')
+  .get(getSavedData)
+  .post(saveData);
+
 
     
 // this is for production use only, if no API routes are hit then serve up the React frontend

@@ -1,9 +1,9 @@
-import React from 'react';
-import queryString from 'query-string';
-import { getUserData } from '../../utils/api';
-import { Link } from 'react-router-dom';
-import Player from './Player';
-import Loading from '../Reusable/Loading';
+import React from "react";
+import queryString from "query-string";
+import { getUserData, findUserData, postUserData } from "../../utils/api";
+import { Link } from "react-router-dom";
+import Player from "./Player";
+import Loading from "../Reusable/Loading";
 
 class Results extends React.Component {
   constructor(props) {
@@ -19,9 +19,8 @@ class Results extends React.Component {
   componentDidMount() {
     let players = queryString.parse(this.props.location.search);
     getUserData(players.playerOneName, players.playerTwoName).then(
-     
-        function(profiles) {
-          console.log(profiles);
+      function(profiles) {
+        console.log(profiles);
         if (!profiles) {
           return this.setState(function() {
             return {
@@ -39,33 +38,56 @@ class Results extends React.Component {
             loser: profiles.data[1],
             loading: false
           };
-        });
+        }, () => this.dataToSend());
       }.bind(this)
     );
   }
 
-  render() {
-    let { winner, loser, error, loading } = this.state;
+  dataToSend = () => {
+    const winnerObj = {
+      userName: this.state.winner.login,
+      repos: this.state.winner.public_repos,
+      commits: this.state.winner.commits,
+      score: this.state.winner.score
+    };
 
+    const loserObj = {
+      userName: this.state.loser.login,
+      repos: this.state.loser.public_repos,
+      commits: this.state.loser.commits,
+      score: this.state.loser.score
+    };
+
+    postUserData(winnerObj)
+      .then(playerData => console.log(playerData))
+      .catch(err => console.log(err));
+    postUserData(loserObj)
+      .then(playerData => console.log(playerData))
+      .catch(err => console.log(err));
+  };
+
+  render() {
+    console.log(this.state);
+    let { winner, loser, error, loading } = this.state;
 
     if (loading) {
       return <Loading speed={200} />;
     } else if (error) {
       return (
         <div>
-          <p>{error}</p>
-          <Link to="/battle">Reset</Link>
+          <p> {error} </p> <Link to="/battle"> Reset </Link>{" "}
         </div>
       );
-    } else { 
-      console.log('winner', winner)
-      console.log('loser', loser)
-    return (
-      <div className="row">
-        {winner && <Player label="Winner" profile={winner} />}
-        {loser && <Player label="Loser" profile={loser} />}
-      </div>
-     );
+    } else {
+      console.log("winner", winner);
+      console.log("loser", loser);
+      return (
+        <div className="row">
+          {" "}
+          {winner && <Player label="Winner" profile={winner} />}{" "}
+          {loser && <Player label="Loser" profile={loser} />}{" "}
+        </div>
+      );
     }
   }
 }

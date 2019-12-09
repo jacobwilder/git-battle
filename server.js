@@ -1,7 +1,6 @@
 const express = require('express');
 const routes = require('./routes');
-const Sequelize = require('sequelize');
-const db = require('./models');
+const mongoose = require('mongoose');
 
 const app = express();
 const PORT = process.env.PORT || 3001;
@@ -17,34 +16,8 @@ if (process.env.NODE_ENV === 'production') {
 app.use(routes);
 
 
-/*ERROR FOUND HERE, when run all functions fail with err 500s & proxy errors
+const MONGODB_URI = process.env.MONGODB_URI || 'mongodb://localhost:27017/git-clash';
 
-db.sequelize.sync({force:true}).then(function() {
-  db.result.bulkCreate([{
-    winner_name: 'joe',
-    winner_score: 3,
-    loser_name: 'bob',
-    loser_score: 0
-  }, {
-    winner_name: 'joe',
-    winner_score: 3,
-    loser_name: 'oob',
-    loser_score: 1
-  }, {
-    winner_name: 'foo',
-    winner_score: 5,
-    loser_name: 'bar',
-    loser_score: 1
-  }, {
-    winner_name: 'foo',
-    winner_score: 5,
-    loser_name: 'bob',
-    loser_score: 0
-  }]);
-
-  app.listen(PORT, () => console.log(`Listening on http://localhost:${PORT}`));
-});
-
-*/
+mongoose.connect(MONGODB_URI);
 
 app.listen(PORT, () => console.log(`Listening on http://localhost:${PORT}`));

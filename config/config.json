@@ -1,11 +1,10 @@
 {
     "development": {
       "username": "root",
-      "password": "12345",
+      "password": "26Gamers8!",
       "database": "results_DB",
       "host": "127.0.0.1",
-      "dialect": "mysql",
-      "operatorsAliases": false
+      "dialect": "mysql"
     },
     "test": {
       "username": "root",
