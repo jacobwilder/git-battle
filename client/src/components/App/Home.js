@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import animate from '@jam3/gsap-promise';
 import { findDOMNode } from 'react-dom';
 
-import image1 from '../../img/gitclash6.png';
+import image1 from '../../gitclash6.png';
 
 
 class Home extends React.Component {
@@ -23,7 +23,7 @@ class Home extends React.Component {
       <div className="home-container">
         <h1 className="home-header" ref={c => (this.header = c)}>
           <br></br>
-        <img src={ require('../../img/gitclash6.png') } />
+        <img src={ image1 } alt="Git Clash Logo"/>
         <br></br>
           <br></br>
           An innovative way to simplify the hiring process

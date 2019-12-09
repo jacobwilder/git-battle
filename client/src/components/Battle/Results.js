@@ -1,6 +1,6 @@
 import React from "react";
 import queryString from "query-string";
-import { getUserData, findUserData, postUserData } from "../../utils/api";
+import { getUserData, postUserData } from "../../utils/api";
 import { Link } from "react-router-dom";
 import Player from "./Player";
 import Loading from "../Reusable/Loading";

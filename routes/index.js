@@ -130,7 +130,6 @@ function getStarCount(repos) {
 function calculateScore(user) {
   let followers = user.followers;
   let repos2 = user.public_repos;
-  let commits2 = user.commits;
   let totalStars = getStarCount(user.repos);
   let commits2 = user.commits;
 

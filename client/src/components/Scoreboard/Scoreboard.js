@@ -1,7 +1,6 @@
 import React from "react";
 import propTypes from "prop-types";
 import { findUserData } from "../../utils/api";
-import Loading from "../Reusable/Loading";
 import animate from "@jam3/gsap-promise";
 
 class Scoreboard extends React.Component {

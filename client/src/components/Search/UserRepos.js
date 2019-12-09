@@ -11,7 +11,7 @@ function UserRepos(props) {
           return (
             <li className="repo" key={repo.name}>
               <h3>
-                <a href={repo.html_url} target="_blank">
+                <a href={repo.html_url} rel="noopener noreferrer" target="_blank">
                   {repo.name}
                 </a>
               </h3>
