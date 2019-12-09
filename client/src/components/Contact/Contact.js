@@ -6,6 +6,11 @@ class Contact extends React.Component {
 
     componentDidMount() {
         animate.from(this.header, 0.2, { y: -200, delay: 0.1 });
+        animate.from(this.contain1, 0.2, {x: -2800, delay: 0.2});
+        animate.from(this.contain2, 0.2, {x: -2800, delay: 0.4});
+        animate.from(this.contain3, 0.2, {x: -2800, delay: 0.6});
+        animate.from(this.contain4, 0.2, {x: -2800, delay: 0.8});
+        animate.from(this.contain5, 0.2, {x: -2800, delay: 1.0});
     }
   
   render() {
@@ -14,7 +19,7 @@ class Contact extends React.Component {
         <div>
             <h2 className="h2"  ref={c => (this.header = c)}>Meet the Team</h2>
         </div>
-        <div className="row contact-container">
+        <div className="row contact-container" ref={c => (this.contain1 = c)}>
             <div className="col-md-12">
             <img
                 className="contact-img"            
@@ -38,7 +43,7 @@ class Contact extends React.Component {
             </p>
             </div>
         </div>
-        <div className="row contact-container">
+        <div className="row contact-container" ref={c => (this.contain2 = c)}>
             <div className="col-md-12">
             <img
                 className="contact-img"
@@ -62,7 +67,7 @@ class Contact extends React.Component {
             </p>
             </div>
         </div>
-        <div className="row contact-container">
+        <div className="row contact-container" ref={c => (this.contain3 = c)}>
             <div className="col-md-12">
             <img
                 className="contact-img"
@@ -86,7 +91,7 @@ class Contact extends React.Component {
                 </p>
             </div>
         </div>
-        <div className="row contact-container">
+        <div className="row contact-container" ref={c => (this.contain4 = c)}>
             <div className="col-md-12">
             <img
                 className="contact-img"
@@ -110,7 +115,7 @@ class Contact extends React.Component {
             </p>
             </div>
         </div>
-        <div className="row contact-container">
+        <div className="row contact-container" ref={c => (this.contain5 = c)}>
             <div className="col-md-12">
             <img
                 className="contact-img"

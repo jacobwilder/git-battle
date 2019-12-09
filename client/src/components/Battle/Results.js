@@ -85,7 +85,7 @@ class Results extends React.Component {
         <div className="row">
           {" "}
           {winner && <Player label="Winner" profile={winner} />}{" "}
-          {loser && <Player label="Loser" profile={loser} />}{" "}
+          {loser && <Player label="Runnerup" profile={loser} />}{" "}
         </div>
       );
     }

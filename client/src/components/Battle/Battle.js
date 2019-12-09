@@ -46,19 +46,19 @@ class Battle extends React.Component {
 
   componentDidMount() {
     animate.from(this.first, 0.4, {
-      x: 2200,
+      y: -2200,
       opacity: 0.5,
       delay: 0.2
     });
     animate.from(this.second, 0.4, {
-      y: 2200,
+      y: -2200,
       opacity: 0.5,
-      delay: 0.2
+      delay: 0.3
     });
     animate.from(this.third, 0.4, {
       x: -2200,
       opacity: 0.5,
-      delay: 0.2
+      delay: 0.3
     });
   }
 
