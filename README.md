@@ -21,9 +21,9 @@ Download the repo and run 'npm install'. After installation run 'npm start'.
 Be 
 
 ## Screenshots
-![ScreenShot](https://{imgur.com/dOmI2VY})
-![ScreenShot](https://{imgur.com/WmsAWU3})
-![ScreenShot](https://{imgur.com/vdv0NXM})
+[![HomePage](https://imgur.com/dOmI2VY.png)](https://imgur.com/dOmI2VY.png)
+[![Clash](https://imgur.com/WmsAWU3.png)](https://imgur.com/WmsAWU3.png)
+[![ScoreBoards](https://imgur.com/vdv0NXM.png)](https://imgur.com/vdv0NXM.png)
 
 
 
