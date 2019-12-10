@@ -51,14 +51,14 @@ li {
   display: block;
   padding: 7px 0;
   margin: 10px auto;
+  cursor: pointer;  
+
 }
 
 .button:hover {
   background: lightskyblue;
-  color: #ffffff
-
-
-
+  color: #ffffff;
+  cursor: pointer;
 }
 
 .button:hover:enabled {
