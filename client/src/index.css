@@ -489,15 +489,15 @@ th, td {
 }
 
 body::-webkit-scrollbar, .tableDiv::-webkit-scrollbar {
-  background: linear-gradient(#141e30,
-    #243b55);
-  width: 16px
+  background: linear-gradient(#618cdd,
+  #8cb6e6);
+  width: 10px
 }
 
 /* background of the scrollbar except button or resizer */
 body::-webkit-scrollbar-track, .tableDiv::-webkit-scrollbar-track {
-  background: linear-gradient(#141e30,
-    #243b55);
+  background: linear-gradient(#618cdd,
+    #8cb6e6);
 }
 
 /* scrollbar itself */
