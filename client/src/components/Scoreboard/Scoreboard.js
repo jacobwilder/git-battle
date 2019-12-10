@@ -15,7 +15,7 @@ class Scoreboard extends React.Component {
   }
 
   componentDidMount() {
-    animate.from(this.label, 0.2, { y: -200, delay: 0.1 });
+    animate.from(this.label, 0.2, { y: 1200, delay: 0.3 });
     findUserData().then(
       function(info) {
         this.setState(function() {
@@ -43,7 +43,7 @@ class Scoreboard extends React.Component {
   render() {
 
     return (
-      <div className="tableDiv">
+      <div className="tableDiv" ref={c => (this.label = c)}>
         {this.state.scoreboard.length > 0 ? (
           <table className="tableOne" /*key={user._id}*/>
             <thead>
