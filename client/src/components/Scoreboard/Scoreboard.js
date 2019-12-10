@@ -45,7 +45,7 @@ class Scoreboard extends React.Component {
     return (
       <div className="tableDiv" ref={c => (this.label = c)}>
         {this.state.scoreboard.length > 0 ? (
-          <table className="tableOne" /*key={user._id}*/>
+          <table className="tableOne score-container" /*key={user._id}*/>
             <thead>
               <tr>
                   <th>User</th>

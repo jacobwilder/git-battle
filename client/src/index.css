@@ -452,17 +452,18 @@ body{
 }
 
 .tableDiv {
+  margin-top: 50px;
   overflow-y: scroll;
-  height: 550px;
+  max-height: 80vh;
   width: auto;
 }
 
 .tableOne {
-  width: 95%;
-  margin: 25px;
+  width: 100%;
+  /* margin: 25px; */
   box-shadow: 0 1px 5px rgba(44, 44, 44, 0.46);
   overflow-y: scroll;
-  border: 1px solid black;
+  border: 1px solid lightskyblue;
 }
 
 th, td {
@@ -470,4 +471,43 @@ th, td {
   text-align: center;
 }
 
+.score-container:before {
+  content: '';
+  position: absolute;
+  background: inherit;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  box-shadow: inset 0 0 2000px rgba(255, 255, 255, .5);
+  box-shadow: inset 0 0 2000px rgba(255, 255, 255, .5);
+  filter: blur(10px);
+}
 
+.score-container {
+  background: inherit;
+}
+
+body::-webkit-scrollbar, .tableDiv::-webkit-scrollbar {
+  background: linear-gradient(#141e30,
+    #243b55);
+  width: 16px
+}
+
+/* background of the scrollbar except button or resizer */
+body::-webkit-scrollbar-track, .tableDiv::-webkit-scrollbar-track {
+  background: linear-gradient(#141e30,
+    #243b55);
+}
+
+/* scrollbar itself */
+body::-webkit-scrollbar-thumb, .tableDiv::-webkit-scrollbar-thumb{
+  background-color: lightskyblue;
+  border-radius: 16px;
+  border: 1px solid #fff;
+}
+
+/* set button(top and bottom of the scrollbar) */
+body::-webkit-scrollbar-button, .tableDiv::-webkit-scrollbar-button {
+  display: none
+}
