@@ -9,7 +9,8 @@
 - [React](https://reactjs.org)
 - [MongoDB](https://mongodb.com)
 - [Github REST APIv3](https://developer.github.com/v3)
-- [GreenSock Animations] (https://greensock.com/)
+- [GreenSock Animations](https://greensock.com/)
+- [PropTypes](https://www.npmjs.com/package/prop-types)
 
 ### Features
 * Clash between two github developers using data obtained from GitHub API

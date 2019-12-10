@@ -34,10 +34,8 @@ class Battle extends React.Component {
     this.state = {
       playerOneName: '',
       playerTwoName: '',
-      playerThreeName: '',
       playerOneImage: null,
       playerTwoImage: null,
-      playerThreeImage: null
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);
