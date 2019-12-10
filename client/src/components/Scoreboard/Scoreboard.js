@@ -1,6 +1,7 @@
 import React from "react";
 import propTypes from "prop-types";
 import { findUserData } from "../../utils/api";
+import Loading from "../Reusable/Loading";
 import animate from "@jam3/gsap-promise";
 
 class Scoreboard extends React.Component {
@@ -43,20 +44,30 @@ class Scoreboard extends React.Component {
   render() {
 
     return (
-      <div>
+      <div className="tableDiv">
         {this.state.scoreboard.length > 0 ? (
-          this.state.scoreboard.map(user => {
-            return (
-              <div key={user._id}>
-                <p>{user.userName}</p>
-                <p>{user.score}</p>
-                <p>{user.repos}</p>
-                <p>{user.commits}</p>
-              </div>
-            );
-          })
+          <table className="tableOne" /*key={user._id}*/>
+            <thead>
+              <tr>
+                  <th>User</th>
+                  <th>Score</th>
+                  <th>Repos</th>
+                  <th>Commits</th>
+              </tr>
+            </thead>
+            <tbody>
+              {this.state.scoreboard.map(user =>
+                <tr>
+                  <td>{user.userName}</td>
+                  <td>{user.score}</td>
+                  <td>{user.repos}</td>
+                  <td>{user.commits}</td>
+                </tr>
+              )}
+            </tbody>
+          </table>
         ) : (
-          <h1>Waiting for API data...</h1>
+          <Loading speed={200} />
         )}
       </div>
     );

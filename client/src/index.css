@@ -451,3 +451,22 @@ body{
   }
 }
 
+.tableDiv {
+  overflow-y: scroll;
+  height: 550px;
+  width: auto;
+}
+
+.tableOne {
+  margin: 25px;
+  box-shadow: 0 1px 5px rgba(44, 44, 44, 0.46);
+  overflow-y: scroll;
+  border: 1px solid black;
+}
+
+th, td {
+  padding: 5px 40px 5px 40px;
+  text-align: center;
+}
+
+
