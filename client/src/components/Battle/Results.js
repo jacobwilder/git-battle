@@ -21,6 +21,7 @@ class Results extends React.Component {
     getUserData(players.playerOneName, players.playerTwoName).then(
       function(profiles) {
         console.log(profiles);
+        console.log("PROPS: ", players);
         if (!profiles) {
           return this.setState(function() {
             return {
