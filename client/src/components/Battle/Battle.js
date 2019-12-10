@@ -86,6 +86,8 @@ class Battle extends React.Component {
 
     return (
       <div>
+        <br></br>
+        <br></br>
         <div className="row">
           {!playerOneName && (
             <PlayerInput
