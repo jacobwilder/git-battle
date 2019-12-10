@@ -31,7 +31,7 @@ router.get("/api/repos/:username", (req, res) => {
   });
 });
 
-router.get("/api/:username1?/:username2?/:username3?", (req, res) => {
+router.get("/api/:username1?/:username2?", (req, res) => {
   axios
     .all([getManuel(req.params.username1), getManuel(req.params.username2)])
     .then(
