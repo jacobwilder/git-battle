@@ -21,9 +21,11 @@ Download the repo and run 'npm install'. After installation run 'npm start'.
 Be 
 
 ## Screenshots
-[![brave-6-Egg-T8-BJb-D.png](https://i.postimg.cc/KYSGW62y/brave-6-Egg-T8-BJb-D.png)](https://postimg.cc/XrL6GDq2)
-[![brave-3-A0p-ABLkdn.png](https://i.postimg.cc/xCjDs4jD/brave-3-A0p-ABLkdn.png)](https://postimg.cc/94kn01qJ)
-[![brave-yro-Cx7-PK6m.png](https://i.postimg.cc/WbSvZjsm/brave-yro-Cx7-PK6m.png)](https://postimg.cc/N5ySh39L)
+![ScreenShot](https://{imgur.com/dOmI2VY})
+![ScreenShot](https://{imgur.com/WmsAWU3})
+![ScreenShot](https://{imgur.com/vdv0NXM})
+
+
 
 ## Github Links
 * https://www.github.com/jacobwilder
