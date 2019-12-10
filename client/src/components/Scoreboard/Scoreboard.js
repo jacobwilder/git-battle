@@ -1,5 +1,5 @@
 import React from "react";
-import propTypes from "prop-types";
+import Loading from "../Reusable/Loading";
 import { findUserData } from "../../utils/api";
 import Loading from "../Reusable/Loading";
 import animate from "@jam3/gsap-promise";
@@ -67,16 +67,12 @@ class Scoreboard extends React.Component {
             </tbody>
           </table>
         ) : (
-          <Loading speed={200} />
+          <Loading speed="250" />
         )}
       </div>
     );
   }
 }
 
-Scoreboard.propTypes = {
-  user: propTypes.string.isRequired,
-  userInfo: propTypes.object.isRequired
-};
 
 export default Scoreboard;
