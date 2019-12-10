@@ -241,7 +241,8 @@ li {
 }
 
 .contact-info {
-  margin-top: 45px
+  margin-top: 45px;
+  font-size: 25px;
 }
 
 .repo {
@@ -497,6 +498,7 @@ th, td {
   box-shadow: inset 0 0 2000px rgba(255, 255, 255, .5);
   box-shadow: inset 0 0 2000px rgba(255, 255, 255, .5);
   filter: blur(10px);
+  z-index: -200;
 }
 
 .score-container, .contact-container {
