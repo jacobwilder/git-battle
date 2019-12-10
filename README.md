@@ -1,4 +1,4 @@
-### Git Compare
+### Git Clash
 
 ### Overview
 -Face off against different github users head to head. Victory is based on a score that is calculated from followers, commits, and number of public repos.
@@ -8,16 +8,17 @@
 - [Javascript](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
 - [React](https://reactjs.org)
 - [MongoDB](https://mongodb.com)
-- [Sweet Alert JS](https://sweetalert.js.org)
 - [Github REST APIv3](https://developer.github.com/v3)
+- [GreenSock Animations] (https://greensock.com/)
 
 ### Features
-* Battles between two to three users using data obtained from GitHub API
+* Clash between two github developers using data obtained from GitHub API
 * Search any user
-* Stores previous battles and creates a leaderboards for all users 
+* Stores previous clashes and creates a leaderboards for all users 
 
 ### Usage
-Download the repo and run 'npm install'. After installation run 'npm start'.
+Download the repo and run 'npm install'. After installation run 'npm start'. 
+Be 
 
 ## Screenshots
 [![brave-bt-NPal0-AAM.png](https://i.postimg.cc/vT3DF3vt/brave-bt-NPal0-AAM.png)](https://postimg.cc/cttdf72v)

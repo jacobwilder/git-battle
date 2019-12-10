@@ -65,6 +65,7 @@ function getProfile(username) {
     });
 }
 
+//alternative API for github commits --credits to https://github.com/sallar */
 function getCommits(username) {
   return axios
     .get(`https://github-contributions-api.now.sh/v1/${username}`)
