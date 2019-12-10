@@ -1,5 +1,3 @@
-### Git Clash
-
 [![HomePage](https://imgur.com/dOmI2VY.png)](https://imgur.com/dOmI2VY.png)
 
 ### Overview
