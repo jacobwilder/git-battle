@@ -53,11 +53,6 @@ class Battle extends React.Component {
       opacity: 0.5,
       delay: 0.3
     });
-    animate.from(this.third, 0.4, {
-      x: -2200,
-      opacity: 0.5,
-      delay: 0.3
-    });
   }
 
   handleSubmit(id, username) {

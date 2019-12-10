@@ -315,7 +315,8 @@ p {
 .row {
 display: flex;
 width: 1060px;
-height: 300px
+height: 300px;
+margin-left: 7%;
 }
 
 .col-md-12 {
