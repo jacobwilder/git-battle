@@ -14,9 +14,9 @@
 - [PropTypes](https://www.npmjs.com/package/prop-types)
 
 ### Features
-* Clash between two github developers using data obtained from GitHub API
-* Search any user
-* Stores previous clashes and creates a leaderboards for all users 
+* Clash between two github developers to display experience based on data obtained from GitHub API
+* Search through github by username, displaying account information as well as repository data
+* Stores previous clashes and creates a scoreboard for all potential candidates
 
 ### Usage
 Download the repo and run 'npm install'. After installation run 'npm start'. 
