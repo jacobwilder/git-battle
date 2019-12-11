@@ -1,9 +1,9 @@
 [![HomePage](https://imgur.com/dOmI2VY.png)](https://imgur.com/dOmI2VY.png)
 
 ### Overview
--This application is meant to be used as a simplified method to decide on the best candidates to hire based on their past github history.
--Face off against different github users head to head. Victory is based on a score that is calculated from followers, commits, and number of public repos.
--Users can also search individual Github profiles as well as view previous battle leaderboards. 
+* This application is meant to be used as a simplified method to decide on the best candidates to hire based on their past github history.
+* Face off against different github users head to head. Victory is based on a score that is calculated from followers, commits, and number of public repos.
+* Users can also search individual Github profiles as well as view previous battle leaderboards. 
 
 ### Technologies / Languages Used
 - [Javascript](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
