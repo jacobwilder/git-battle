@@ -44,7 +44,7 @@ class Scoreboard extends React.Component {
     return (
       <div className="tableDiv" ref={c => (this.label = c)}>
         {this.state.scoreboard.length > 0 ? (
-          <table className="tableOne score-container" /*key={user._id}*/>
+          <table className="tableOne score-container">
             <thead>
               <tr>
                   <th>User</th>
@@ -55,8 +55,8 @@ class Scoreboard extends React.Component {
             </thead>
             <tbody>
               {this.state.scoreboard.map(user =>
-                <tr>
-                  <td><a href={"https://github.com/" + user.userName} target="_blank">{user.userName}</a></td>
+                <tr key={user._id}>
+                  <td><a href={"https://github.com/" + user.userName} rel="noopener noreferrer"target="_blank">{user.userName}</a></td>
                   <td>{user.score}</td>
                   <td>{user.repos}</td>
                   <td>{user.commits}</td>

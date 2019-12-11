@@ -28,7 +28,7 @@ PlayerPreview.propTypes = {
   id: propTypes.string.isRequired
 };
 
-class Battle extends React.Component {
+class Clash extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -145,4 +145,4 @@ class Battle extends React.Component {
   }
 }
 
-export default Battle;
+export default Clash;

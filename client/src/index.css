@@ -127,9 +127,6 @@ li {
   color: #ffffff
 }
 
-.row {
-  justify-content: space-around;
-}
 
 .column {
   display: flex;
@@ -314,10 +311,9 @@ p {
 }
 
 .row {
+justify-content: space-around;
 display: flex;
-width: 1060px;
 height: 300px;
-margin-left: 8%;
 }
 
 .col-md-12 {
@@ -474,6 +470,10 @@ th, td {
   text-align: center;
 }
 
+.responsive-image {
+  width: 100%;
+  height: auto;
+}
 .score-container:before {
   content: '';
   position: absolute;

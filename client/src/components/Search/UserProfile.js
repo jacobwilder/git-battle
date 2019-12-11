@@ -13,7 +13,7 @@ function UserProfile(props) {
       <div className="profileLogo">
         <img className="avatar" src={profile.avatar_url} alt={profile.login} />
         <br />
-        <a href={profile.html_url}>{profile.login}</a>
+        <a href={profile.html_url}>@{profile.login}</a>
       </div>
       <div>
         <h3>{profile.name}</h3>
@@ -21,15 +21,15 @@ function UserProfile(props) {
           <i className="fa fa-map-marker" aria-hidden="true" />{' '}
           {profile.location}
         </h4>
-        <h4>{profile.company ? `Company: ${profile.company}` : ``}</h4>
-        <p>{profile.bio}</p>
-      </div>
-      <div>
         <h4>
           <a href={profile.blog} rel="noopener noreferrer" target="_blank">
             {profile.blog}
           </a>
         </h4>
+        <h4>{profile.company ? `Company: ${profile.company}` : ``}</h4>
+        <p>{profile.bio}</p>
+      </div>
+      <div>
         <p>
           <i className="fa fa-code-fork" aria-hidden="true" /> Repositories:{' '}
           {profile.public_repos}

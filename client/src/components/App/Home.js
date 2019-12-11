@@ -23,7 +23,7 @@ class Home extends React.Component {
       <div className="home-container">
         <h1 className="home-header" ref={c => (this.header = c)}>
           <br></br>
-        <img src={ image1 } alt="Git Clash Logo"/>
+        <img className="responsive-img" src={ image1 } alt="Git Clash Logo"/>
         <br></br>
           <br></br>
           An innovative way to simplify the hiring process
@@ -32,7 +32,7 @@ class Home extends React.Component {
         <Link
           ref={l => (this.button = findDOMNode(l))}
           className="button"
-          to="/battle"
+          to="/clash"
         >
           Clash
         </Link>

@@ -4,6 +4,7 @@ import { NavLink } from 'react-router-dom';
 class Nav extends React.Component {
   render() {
     return (
+    <div id="navbar">
       <ul className="nav">
         <li>
           <NavLink exact activeClassName="active" to="/">
@@ -11,7 +12,7 @@ class Nav extends React.Component {
           </NavLink>
         </li>
         <li>
-          <NavLink activeClassName="active" to="/battle">
+          <NavLink activeClassName="active" to="/clash">
             Clash
           </NavLink>
         </li>
@@ -31,6 +32,7 @@ class Nav extends React.Component {
           </NavLink>
         </li>
       </ul>
+    </div>
     );
   }
 }

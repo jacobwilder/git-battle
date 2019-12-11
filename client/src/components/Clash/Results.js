@@ -76,7 +76,7 @@ class Results extends React.Component {
     } else if (error) {
       return (
         <div>
-          <p> {error} </p> <Link to="/battle"> Reset </Link>{" "}
+          <p> {error} </p> <Link to="/clash"> Reset </Link>{" "}
         </div>
       );
     } else {

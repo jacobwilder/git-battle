@@ -2,8 +2,8 @@ var axios = require("axios");
 const router = require("express").Router();
 const path = require("path");
 
-const id = process.env.GITHUB_ID || "INPUT GITHUB DATA HERE";
-const sec = process.env.GITHUB_SEC || "INPUT GITHUB DATA HERE";
+const id = process.env.GITHUB_ID;
+const sec = process.env.GITHUB_SEC;
 
 const params = `?client_id=${id}&client_secret=${sec}`;
 const latest = `${params}&order=asc&sort=updated`;
@@ -65,7 +65,6 @@ function getProfile(username) {
     });
 }
 
-//alternative API for github commits --credits to https://github.com/sallar */
 function getCommits(username) {
   return axios
     .get(`https://github-contributions-api.now.sh/v1/${username}`)
