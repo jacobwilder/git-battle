@@ -3,6 +3,7 @@ const router = require("express").Router();
 
 const { 
   showUser,
+  listRepos,
   getUserRepos,
   getCommits,
   getManuel,
@@ -19,12 +20,7 @@ router.get("/:username", showUser);
  * Route to retrieve user repos
  * GET /api/repos/:username
  */
-router.get("/repos/:username", (req, res) => {
-  console.log(`GET /api/repos/${req.params.username}`);
-  getUserRepos(req.params.username).then(repos => {
-    res.json(repos);
-  });
-});
+router.get("/repos/:username", listRepos);
 
 /**
  * Route to compare two user's profiles

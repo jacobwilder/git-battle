@@ -19,6 +19,18 @@ const showUser = (req, res) => {
 };
 
 /**
+ * Retrieve User Repos
+ * 
+ * @param {string} req.params.username GitHub username to search
+ */
+const listRepos = (req, res) => {
+  console.log(`listRepos - GET /api/repos/${req.params.username}`);
+  getUserRepos(req.params.username).then(repos => {
+    res.json(repos);
+  });
+};
+
+/**
  * Retrieve User Repositories from GitHub 
  * 
  * @param {string} username GitHub username to look up
@@ -152,6 +164,7 @@ const sortPlayers = players => {
 
 module.exports = {
   showUser,
+  listRepos,
   getUserRepos,
   getCommits,
   getManuel,
