@@ -13,7 +13,7 @@ const latest = `${params}&order=asc&sort=updated`;
  */
 const showUser = (req, res) => {
   console.log(`showUser - GET /api/${req.params.username}`);
-  getManuel(req.params.username).then(profile => {
+  getPlayer(req.params.username).then(profile => {
     res.json(profile);
   });
 };
@@ -25,7 +25,7 @@ const showUser = (req, res) => {
  * @param {string} [req.params.username2] 2nd GitHub username to search
  */
 const listTwoUsers = (req, res) => {
-  axios.all([getManuel(req.params.username1), getManuel(req.params.username2)])
+  axios.all([getPlayer(req.params.username1), getPlayer(req.params.username2)])
     .then(
       axios.spread((profile1, profile2) => {
         res.json(sortPlayers([profile1, profile2]));
@@ -103,7 +103,7 @@ const getCommits = username => {
  * @param {string} username GitHub username to look up
  * @return {Object}
  */
-const getManuel = username => {
+const getPlayer = username => {
   return axios
     .all([getProfile(username), getUserRepos(username), getCommits(username)])
     .then(
