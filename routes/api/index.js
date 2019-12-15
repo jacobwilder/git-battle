@@ -1,16 +1,16 @@
 const axios = require("axios");
 const router = require("express").Router();
 
+const dataRoutes = require("./data");
+
 const id = process.env.GITHUB_ID;
 const sec = process.env.GITHUB_SEC;
 
 const params = `?client_id=${id}&client_secret=${sec}`;
 const latest = `${params}&order=asc&sort=updated`;
 
-const { 
-  getSavedData, 
-  saveData 
-} = require("../../controllers/data-controller");
+// Data (scoreboard) routes
+router.use("/data", dataRoutes)
 
 /**
  * Route to retrieve user profile
@@ -58,18 +58,6 @@ router.get("/user/:username1?/:username2?", (req, res) => {
       })
     );
 });
-
-/**
- * Route to retrieve scoreboard
- * GET /data/scoreboard
- */
-router.get("/data/scoreboard", getSavedData);
-
-/**
- * Route to save user scores
- * POST /data/scoreboard
- */
-router.post("/data/scoreboard", saveData);
 
 function getUserRepos(username) {
   return axios
