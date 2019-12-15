@@ -1,5 +1,11 @@
 const { Data } = require("../models");
 
+/**
+ * Retrieve Data
+ * 
+ * @param {Object} req Express request object
+ * @param {Object} res Express response object
+ */
 const getSavedData = (req, res) => {
   Data.find({})
     .then(dbPlayerData => {
@@ -15,6 +21,12 @@ const getSavedData = (req, res) => {
     });
 };
 
+/**
+ * Add new Data
+ * 
+ * @param {Object} req Express request object
+ * @param {Object} res Express response object
+ */
 const saveData = (req, res) => {
   Data.create(req.body)
     .then(dbPlayerData => res.json(dbPlayerData))
@@ -24,6 +36,12 @@ const saveData = (req, res) => {
     });
 };
 
+/**
+ * Retrieve only the high scores
+ * 
+ * @param {Array<Object>} arr an array of high-scoring users
+ * @return {Array<Object>} an array of unique high-scoring users 
+ */
 const getOnlyHighScores = arr => {
   let newArr = [];
   for (let i = 0; i < arr.length; i++) {
