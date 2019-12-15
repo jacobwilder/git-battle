@@ -3,6 +3,7 @@ const router = require("express").Router();
 
 const { 
   showUser,
+  listTwoUsers,
   listRepos,
   getUserRepos,
   getCommits,
@@ -17,24 +18,16 @@ const {
 router.get("/:username", showUser);
 
 /**
+ * Route to compare two user's profiles
+ * GET /api/:username1?/:username2?
+ */
+router.get("/:username1?/:username2?", listTwoUsers);
+
+/**
  * Route to retrieve user repos
  * GET /api/repos/:username
  */
 router.get("/repos/:username", listRepos);
-
-/**
- * Route to compare two user's profiles
- * GET /api/:username1?/:username2?
- */
-router.get("/:username1?/:username2?", (req, res) => {
-  axios
-    .all([getManuel(req.params.username1), getManuel(req.params.username2)])
-    .then(
-      axios.spread((profile1, profile2) => {
-        res.json(sortPlayers([profile1, profile2]));
-      })
-    );
-});
 
 /**
  * Route to retrieve user commits (deprecated?)

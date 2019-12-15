@@ -19,6 +19,21 @@ const showUser = (req, res) => {
 };
 
 /**
+ * Retrieve Two User Profiles
+ * 
+ * @param {string} [req.params.username1] 1st GitHub username to search
+ * @param {string} [req.params.username2] 2nd GitHub username to search
+ */
+const listTwoUsers = (req, res) => {
+  axios.all([getManuel(req.params.username1), getManuel(req.params.username2)])
+    .then(
+      axios.spread((profile1, profile2) => {
+        res.json(sortPlayers([profile1, profile2]));
+      })
+    );
+};
+
+/**
  * Retrieve User Repos
  * 
  * @param {string} req.params.username GitHub username to search
@@ -164,6 +179,7 @@ const sortPlayers = players => {
 
 module.exports = {
   showUser,
+  listTwoUsers,
   listRepos,
   getUserRepos,
   getCommits,
