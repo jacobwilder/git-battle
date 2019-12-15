@@ -96,18 +96,6 @@ const getManuel = username => {
 };
 
 /**
- * Retrieve User Repositories (deprecated?)
- * 
- * @param {string} username GitHub username to look up
- * @param {number} [quantity=100] GitHub user's repos to retrieve
- */
-const getRepos = (username, quantity = 100) => {
-  return axios.get(
-    `http://api.github.com/users/${username}/repos${params}&per_page=${quantity}`
-  );
-};
-
-/**
  * Retrieve Total Number of Repository Stars
  * 
  * @param {Array<Object>} repos Array of repo objects
