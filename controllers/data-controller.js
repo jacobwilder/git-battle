@@ -1,23 +1,5 @@
 const { Data } = require("../models");
 
-
-const getOnlyHighScores = arr => {
-  let newArr = [];
-  for (let i = 0; i < arr.length; i++) {
-    const foundUser = newArr.find(user => user.userName === arr[i].userName);
-    if (!foundUser) {
-      newArr.push(arr[i]);
-    } else {
-      const foundIndex = newArr.findIndex(
-        user => user.userName === arr[i].userName && user.score < arr[i].score
-      );
-      newArr[foundIndex] = arr[i];
-    }
-  }
-  return newArr;
-};
-
-
 const getSavedData = (req, res) => {
   Data.find({})
     .then(dbPlayerData => {
@@ -42,7 +24,21 @@ const saveData = (req, res) => {
     });
 };
 
-
+const getOnlyHighScores = arr => {
+  let newArr = [];
+  for (let i = 0; i < arr.length; i++) {
+    const foundUser = newArr.find(user => user.userName === arr[i].userName);
+    if (!foundUser) {
+      newArr.push(arr[i]);
+    } else {
+      const foundIndex = newArr.findIndex(
+        user => user.userName === arr[i].userName && user.score < arr[i].score
+      );
+      newArr[foundIndex] = arr[i];
+    }
+  }
+  return newArr;
+};
 
 module.exports = {
   getSavedData,
