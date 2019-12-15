@@ -54,7 +54,6 @@ const getCommits = username => {
   return axios
     .get(`https://github-contributions-api.now.sh/v1/${username}`)
     .then(user => {
-      console.log(user.data.years[0].total);
       return user.data.years[0].total;
     });
 };

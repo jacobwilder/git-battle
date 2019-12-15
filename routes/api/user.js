@@ -16,17 +16,6 @@ const {
 router.get("/:username", showUser);
 
 /**
- * Route to retrieve user commits
- * GET /api/commits/:username
- */
-router.get("/commits/:username", (req, res) => {
-  console.log(`GET /api/commits/${req.params.username}`);
-  getCommits(req.params.username).then(commits => {
-    res.json(commits);
-  });
-});
-
-/**
  * Route to retrieve user repos
  * GET /api/repos/:username
  */
@@ -49,6 +38,17 @@ router.get("/:username1?/:username2?", (req, res) => {
         res.json(sortPlayers([profile1, profile2]));
       })
     );
+});
+
+/**
+ * Route to retrieve user commits (deprecated?)
+ * GET /api/commits/:username
+ */
+router.get("/commits/:username", (req, res) => {
+  console.log(`GET /api/commits/${req.params.username}`);
+  getCommits(req.params.username).then(commits => {
+    res.json(commits);
+  });
 });
 
 module.exports = router;
