@@ -1,4 +1,4 @@
-const Data = require('./result');
+const Data = require('./data');
 
 module.exports = {
   Data
