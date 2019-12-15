@@ -7,7 +7,10 @@ const sec = process.env.GITHUB_SEC;
 const params = `?client_id=${id}&client_secret=${sec}`;
 const latest = `${params}&order=asc&sort=updated`;
 
-const { getSavedData, saveData } = require("../../controllers/data-controller");
+const { 
+  getSavedData, 
+  saveData 
+} = require("../../controllers/data-controller");
 
 /**
  * Route to retrieve user profile
