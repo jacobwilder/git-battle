@@ -10,6 +10,10 @@ const latest = `${params}&order=asc&sort=updated`;
 
 const { getSavedData, saveData } = require("../controllers/data-controller");
 
+/**
+ * Route to retrieve user profile
+ * GET /api/:username
+ */
 router.get("/api/:username", (req, res) => {
   console.log(`GET /api/${req.params.username}`);
   getManuel(req.params.username).then(profile => {
@@ -17,6 +21,10 @@ router.get("/api/:username", (req, res) => {
   });
 });
 
+/**
+ * Route to retrieve user commits
+ * GET /api/commits/:username
+ */
 router.get("/api/commits/:username", (req, res) => {
   console.log(`GET /api/commits/${req.params.username}`);
   getCommits(req.params.username).then(commits => {
@@ -24,6 +32,10 @@ router.get("/api/commits/:username", (req, res) => {
   });
 });
 
+/**
+ * Route to retrieve user repos
+ * GET /api/repos/:username
+ */
 router.get("/api/repos/:username", (req, res) => {
   console.log(`GET /api/repos/${req.params.username}`);
   getUserRepos(req.params.username).then(repos => {
@@ -31,6 +43,10 @@ router.get("/api/repos/:username", (req, res) => {
   });
 });
 
+/**
+ * Route to compare two user's profiles
+ * GET /api/:username1?/:username2?
+ */
 router.get("/api/:username1?/:username2?", (req, res) => {
   axios
     .all([getManuel(req.params.username1), getManuel(req.params.username2)])
@@ -41,10 +57,17 @@ router.get("/api/:username1?/:username2?", (req, res) => {
     );
 });
 
-router
-  .route("/data/scoreboard")
-  .get(getSavedData)
-  .post(saveData);
+/**
+ * Route to retrieve scoreboard
+ * GET /data/scoreboard
+ */
+router.get("/data/scoreboard", getSavedData);
+
+/**
+ * Route to save user scores
+ * POST /data/scoreboard
+ */
+router.post("/data/scoreboard", saveData);
 
 // this is for production use only, if no API routes are hit then serve up the React frontend
 router.use((req, res) => {
