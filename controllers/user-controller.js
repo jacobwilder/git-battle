@@ -108,25 +108,25 @@ const getPlayer = username => {
     .all([getProfile(username), getUserRepos(username), getCommits(username)])
     .then(
       axios.spread((profile, repos, commits) => {
-        let manuel = {};
+        let player = {};
 
-        manuel.created_at = profile.created_at;
-        manuel.avatar_url = profile.avatar_url;
-        manuel.login = profile.login;
-        manuel.html_url = profile.html_url;
-        manuel.login = profile.login;
-        manuel.name = profile.name;
-        manuel.location = profile.location;
-        manuel.company = profile.company;
-        manuel.bio = profile.bio;
-        manuel.blog = profile.blog;
-        manuel.public_repos = profile.public_repos;
-        manuel.public_gists = profile.public_gists;
-        manuel.followers = profile.followers;
-        manuel.following = profile.following;
-        manuel.commits = commits;
+        player.created_at = profile.created_at;
+        player.avatar_url = profile.avatar_url;
+        player.login = profile.login;
+        player.html_url = profile.html_url;
+        player.login = profile.login;
+        player.name = profile.name;
+        player.location = profile.location;
+        player.company = profile.company;
+        player.bio = profile.bio;
+        player.blog = profile.blog;
+        player.public_repos = profile.public_repos;
+        player.public_gists = profile.public_gists;
+        player.followers = profile.followers;
+        player.following = profile.following;
+        player.commits = commits;
 
-        manuel.repos = [];
+        player.repos = [];
 
         repos.forEach(repo => {
           let kevin = {};
@@ -136,11 +136,11 @@ const getPlayer = username => {
           kevin.stargazers_count = repo.stargazers_count;
           kevin.forks_count = repo.forks_count;
           kevin.language = repo.language;
-          manuel.repos.push(kevin);
+          player.repos.push(kevin);
         });
 
-        manuel.score = calculateScore(manuel);
-        return manuel;
+        player.score = calculateScore(player);
+        return player;
       })
     );
 };
