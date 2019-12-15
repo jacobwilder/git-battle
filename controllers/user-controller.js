@@ -7,6 +7,18 @@ const params = `?client_id=${id}&client_secret=${sec}`;
 const latest = `${params}&order=asc&sort=updated`;
 
 /**
+ * Retrieve User Profile
+ * 
+ * @param {string} req.params.username GitHub username to search
+ */
+const showUser = (req, res) => {
+  console.log(`showUser - GET /api/${req.params.username}`);
+  getManuel(req.params.username).then(profile => {
+    res.json(profile);
+  });
+};
+
+/**
  * Retrieve User Repositories from GitHub 
  * 
  * @param {string} username GitHub username to look up
@@ -140,6 +152,7 @@ const sortPlayers = players => {
 };
 
 module.exports = {
+  showUser,
   getUserRepos,
   getCommits,
   getManuel,

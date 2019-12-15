@@ -2,6 +2,7 @@ const axios = require("axios");
 const router = require("express").Router();
 
 const { 
+  showUser,
   getUserRepos,
   getCommits,
   getManuel,
@@ -12,12 +13,7 @@ const {
  * Route to retrieve user profile
  * GET /api/:username
  */
-router.get("/:username", (req, res) => {
-  console.log(`GET /api/${req.params.username}`);
-  getManuel(req.params.username).then(profile => {
-    res.json(profile);
-  });
-});
+router.get("/:username", showUser);
 
 /**
  * Route to retrieve user commits
