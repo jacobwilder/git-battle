@@ -5,10 +5,7 @@ const {
   showUser,
   listTwoUsers,
   listRepos,
-  getUserRepos,
-  getCommits,
-  getManuel,
-  sortPlayers
+  listCommits
 } = require("../../controllers/user-controller");
 
 /**
@@ -33,11 +30,6 @@ router.get("/repos/:username", listRepos);
  * Route to retrieve user commits (deprecated?)
  * GET /api/commits/:username
  */
-router.get("/commits/:username", (req, res) => {
-  console.log(`GET /api/commits/${req.params.username}`);
-  getCommits(req.params.username).then(commits => {
-    res.json(commits);
-  });
-});
+router.get("/commits/:username", listCommits);
 
 module.exports = router;

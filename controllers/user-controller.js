@@ -46,6 +46,18 @@ const listRepos = (req, res) => {
 };
 
 /**
+ * Retrieve Total Number of Commits
+ * 
+ * @param {string} req.params.username GitHub username to search
+ */
+const listCommits = (req, res) => {
+  console.log(`listCommits - GET /api/commits/${req.params.username}`);
+  getCommits(req.params.username).then(commits => {
+    res.json(commits);
+  });
+};
+
+/**
  * Retrieve User Repositories from GitHub 
  * 
  * @param {string} username GitHub username to look up
@@ -181,8 +193,5 @@ module.exports = {
   showUser,
   listTwoUsers,
   listRepos,
-  getUserRepos,
-  getCommits,
-  getManuel,
-  sortPlayers
+  listCommits
 };
