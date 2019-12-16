@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 export const getProfile = username => {
-  return axios.get(`/api/user/${username}`);
+  return axios.get(`/api/user/profile/${username}`);
 };
 
 export const getUserData = (username1,username2) => {

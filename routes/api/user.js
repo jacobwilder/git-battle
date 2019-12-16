@@ -18,7 +18,7 @@ router.get("/list/", listUsers);
  * Route to retrieve user profile
  * GET /api/user/:username
  */
-router.get("/:username", showUser);
+router.get("/profile/:username", showUser);
 
 /**
  * Route to retrieve user repos
