@@ -20,6 +20,26 @@ const showUser = (req, res) => {
 };
 
 /**
+ * Retrieve Array of User Profiles
+ * 
+ * @param {Array<string>} req.query.username Array of GitHub usernames to search
+ */
+const listUsers = (req, res) => {
+  let usernames = req.query.username;
+
+  // let's limit it to 5 users just in case
+  // TODO: refactor or rethink this
+  if (usernames.length > 5) {
+    usernames = usernames.slice(0, 5);
+  }
+
+  axios.all(usernames.map(username => getPlayer(username)))
+    .then(axios.spread(function(...profiles) {
+      res.json(profiles.sort((a, b) => (a.score < b.score) ? 1 : -1));
+    }));
+};
+
+/**
  * Retrieve Two User Profiles
  * 
  * @param {string} [req.params.username1] 1st GitHub username to search
@@ -194,6 +214,7 @@ const sortPlayers = players => {
 
 module.exports = {
   showUser,
+  listUsers,
   listTwoUsers,
   listRepos,
   listCommits

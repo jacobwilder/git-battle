@@ -2,10 +2,17 @@ const router = require("express").Router();
 
 const { 
   showUser,
+  listUsers,
   listTwoUsers,
   listRepos,
   listCommits
 } = require("../../controllers/user-controller");
+
+/**
+ * Route to compare multiple user profiles
+ * GET /api/user/battle/?usernames=user1;user2;user3...
+ */
+router.get("/list/", listUsers);
 
 /**
  * Route to retrieve user profile
