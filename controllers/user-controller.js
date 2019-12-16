@@ -1,7 +1,8 @@
 const axios = require("axios");
 
-const id = process.env.GITHUB_ID;
-const sec = process.env.GITHUB_SEC;
+require('../config');
+const id = process.env.GITHUB_CLIENT_ID;
+const sec = process.env.GITHUB_CLIENT_SECRET;
 
 const params = `?client_id=${id}&client_secret=${sec}`;
 const latest = `${params}&order=asc&sort=updated`;
@@ -65,7 +66,7 @@ const listCommits = (req, res) => {
  */
 const getUserRepos = username => {
   return axios
-    .get(`http://api.github.com/users/${username}/repos`)
+    .get(`http://api.github.com/users/${username}/repos${latest}`)
     .then(user => user.data);
 };
 
