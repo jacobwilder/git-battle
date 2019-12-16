@@ -39,7 +39,7 @@ const listTwoUsers = (req, res) => {
  * @param {string} req.params.username GitHub username to search
  */
 const listRepos = (req, res) => {
-  console.log(`listRepos - GET /api/repos/${req.params.username}`);
+  console.log(`listRepos - GET /api/user/repos/${req.params.username}`);
   getUserRepos(req.params.username).then(repos => {
     res.json(repos);
   });
