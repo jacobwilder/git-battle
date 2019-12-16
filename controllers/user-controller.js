@@ -110,6 +110,7 @@ const getPlayer = username => {
       axios.spread((profile, repos, commits) => {
         let player = {};
 
+        // TODO: refactor this doggerel
         player.created_at = profile.created_at;
         player.avatar_url = profile.avatar_url;
         player.login = profile.login;
@@ -128,6 +129,7 @@ const getPlayer = username => {
 
         player.repos = [];
 
+        // TODO: refactor this doggerel
         repos.forEach(repo => {
           let playerRepo = {};
           playerRepo.name = repo.name;
