@@ -6,13 +6,13 @@ const {
 
 /**
  * Route to retrieve scoreboard
- * GET /data/scoreboard
+ * GET /api/data/scoreboard
  */
 router.get("/scoreboard", getSavedData);
 
 /**
  * Route to save user scores
- * POST /data/scoreboard
+ * POST /api/data/scoreboard
  */
 router.post("/scoreboard", saveData);
 
