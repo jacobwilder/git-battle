@@ -129,14 +129,14 @@ const getPlayer = username => {
         player.repos = [];
 
         repos.forEach(repo => {
-          let kevin = {};
-          kevin.name = repo.name;
-          kevin.html_url = repo.html_url;
-          kevin.description = repo.description;
-          kevin.stargazers_count = repo.stargazers_count;
-          kevin.forks_count = repo.forks_count;
-          kevin.language = repo.language;
-          player.repos.push(kevin);
+          let playerRepo = {};
+          playerRepo.name = repo.name;
+          playerRepo.html_url = repo.html_url;
+          playerRepo.description = repo.description;
+          playerRepo.stargazers_count = repo.stargazers_count;
+          playerRepo.forks_count = repo.forks_count;
+          playerRepo.language = repo.language;
+          player.repos.push(playerRepo);
         });
 
         player.score = calculateScore(player);
