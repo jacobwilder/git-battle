@@ -14,16 +14,16 @@ const {
 router.get("/:username", showUser);
 
 /**
- * Route to compare two user's profiles
- * GET /api/user/:username1?/:username2?
- */
-router.get("/:username1?/:username2?", listTwoUsers);
-
-/**
  * Route to retrieve user repos
  * GET /api/user/repos/:username
  */
 router.get("/repos/:username", listRepos);
+
+/**
+ * Route to compare two user's profiles
+ * GET /api/user/:username1?/:username2?
+ */
+router.get("/:username1?/:username2?", listTwoUsers);
 
 /**
  * Route to retrieve user commits (deprecated?)
