@@ -65,7 +65,7 @@ const listCommits = (req, res) => {
  */
 const getUserRepos = username => {
   return axios
-    .get(`http://api.github.com/users/${username}/repos${latest}`)
+    .get(`http://api.github.com/users/${username}/repos`)
     .then(user => user.data);
 };
 
