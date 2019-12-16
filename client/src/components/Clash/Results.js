@@ -1,6 +1,6 @@
 import React from "react";
 import queryString from "query-string";
-import { getUserData, postUserData } from "../../utils/api";
+import { getUserList, postUserData } from "../../utils/api";
 import { Link } from "react-router-dom";
 import Player from "./Player";
 import Loading from "../Reusable/Loading";
@@ -18,7 +18,7 @@ class Results extends React.Component {
 
   componentDidMount() {
     let players = queryString.parse(this.props.location.search);
-    getUserData(players.playerOneName, players.playerTwoName).then(
+    getUserList([players.playerOneName, players.playerTwoName]).then(
       function(profiles) {
         console.log(profiles);
         console.log("PROPS: ", players);
