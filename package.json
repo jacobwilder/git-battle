@@ -16,8 +16,10 @@
   "license": "ISC",
   "dependencies": {
     "axios": "^0.19.0",
+    "dot-prop": "^5.2.0",
     "express": "^4.17.1",
     "if-env": "^1.0.4",
+    "minimist": "^1.2.5",
     "mongoose": ">=5.7.5"
   },
   "devDependencies": {
